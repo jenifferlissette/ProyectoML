@@ -1,0 +1,354 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    background-color: #000;
+    /* Para hacer la imagen de fondo visible en toda la página */
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-onda-blanca-suave_52683-55288.jpg');
+    background-size: cover; /* Para cubrir toda el área del fondo */
+    background-repeat: no-repeat; /* Para evitar la repetición de la imagen */
+}
+
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Estilos para la barra del menú */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.AnimeTV {
+    border: 2px solid #362e2e; /* Añade un borde gris */
+    padding: 15px; /* Añade relleno alrededor del contenido */
+    margin-bottom: 15px; /* Añade espacio por debajo del elemento */
+    position: relative; 
+    background-color: rgb(31, 23, 23);
+    color: #ffffff;
+    text-align: center;
+}
+
+.AnimeTV::after {
+    content: ''; /* Añade un contenido pseudo-elemento */
+    position:absolute; /* Establece la posición absoluta */
+    bottom: -10px; /* Coloca el elemento justo debajo del borde */
+    left: 0px; /* Coloca el elemento en el borde izquierdo */
+    width: 100%; /* Ajusta el ancho al 100% */
+    height: 5px; /* Ajusta la altura de la franja */
+    background-color: blue; /* Establece el color de la franja */
+}
+
+/* Menú de navegación */
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background-color: #252222;
+    color:#252222;
+}
+.buscar {
+    display: flex;
+    align-items: center;
+   /* margin-left: auto;  Empuja el elemento hacia la derecha */
+}
+
+.buscar input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.buscar button[type="submit"] {
+    background-color: #ff8902;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.checkbtn{
+    font-size:30px;
+    color: #131212;
+    float: right;
+    line-height: 80px;
+    cursor:pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+.icono {
+    display: flex;
+    align-items: center;
+}
+.icono img {
+    margin-left: 10px;
+    width: 70px;  /*Ajusta el tamanio del icono segun sea necesario*/
+    height: 70px;
+}
+
+.opciones ul {
+    display: flex;
+  /*  align-items: center;*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+.opciones ul li {
+    display: inline;
+    margin-right: 10px;
+    
+}
+.opciones ul li:first-child{
+    margin-left: auto;
+}
+
+.opciones ul li a {
+    color: white;
+    text-decoration: none;
+    
+}
+li a.active, li a:hover {
+background-color: #0f0f0f33;
+cursor: pointer;
+}
+
+.ingresar button {
+    padding: 8px 15px;
+    background-color: #0a0a0a;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; 
+    font-size: 13px;
+    margin: 4px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/*Seccion Peliculas Cartelera*/
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr; 
+    gap: 20px; 
+    padding: 20px; 
+}
+
+.movies {
+    grid-column: 2 / 3; 
+}
+
+.movies h2{
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+hr{
+    border: 2px solid rgb(89, 103, 235);
+    width: 50%;
+    margin-bottom: 40px;
+}
+
+.box-container-1{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 40px;
+    cursor: pointer;
+}
+
+.Sidebar {
+    grid-column: 1 / 2; 
+}
+
+
+/*Slider*/
+.carousel.slide {
+    margin-top: 100px; 
+}
+
+/* Estilos para el pie de página */
+.pie-pagina{
+    width: 100%;
+    background-color: #252222;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 150px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #474a4d;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: #221e19;
+}
+.pie-pagina .grupo-2{
+    background-color: #202020;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+
+.LatestEpisodes {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.LatestEpisodes h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.LatestEpisodes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.LatestEpisodes ul li {
+    margin-bottom: 5px;
+}
+
+.LatestEpisodes ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.LatestEpisodes ul li a:hover {
+    color: #007bff;
+}
+.content img:hover {
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 952px){
+    .icono img{
+        padding-left: 20px;
+        transition: .5s;
+    }
+    .opciones ul li a{
+        font-size: 16px;
+    }
+    .fecha{
+        padding-left: 14px;
+    }
+    .buscar{
+        padding-left: 16px;
+    }
+    .ingresar{
+       padding-left: 16px;
+    }
+}
+
+@media(max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 30%;
+        height: 100vh;
+        background: orange;
+        top: 80px;
+        left: -100%;
+        text-align:center;
+        transition: all .5s;
+
+    }
+    .opciones ul .Buscar {
+        margin-left: 5%; /* Eliminamos el margen izquierdo */
+        margin-right: auto; 
+      }
+    
+    .ingresar{
+        position: relative;
+        width: 30%;
+        line-height: normal;
+    }
+    .buscar input[type="text"] {
+        width: 60%; /* Reducir el ancho */
+    }
+    
+    .buscar button[type="submit"] {
+        width: 30%; /* Reducir el ancho */
+    }
+    
+    .opciones ul li{
+        display: block;
+       margin-bottom: 10px;
+
+    }
+    .opciones ul li a{
+        white-space: pre-wrap;
+        font-size: 20px;
+
+    }
+    li a.active, li a:hover{
+        background: none;
+        color: orange;
+    }
+    #check:checked ~ .menu .opciones ul{
+        left:0;
+    }
+}
+
