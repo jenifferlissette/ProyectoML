@@ -6,7 +6,6 @@
 }
 body {
     background-color: #000;
-    /* Para hacer la imagen de fondo visible en toda la página */
     background-image: url('https://img.freepik.com/vector-gratis/fondo-onda-blanca-suave_52683-55288.jpg');
     background-size: cover; /* Para cubrir toda el área del fondo */
     background-repeat: no-repeat; /* Para evitar la repetición de la imagen */
